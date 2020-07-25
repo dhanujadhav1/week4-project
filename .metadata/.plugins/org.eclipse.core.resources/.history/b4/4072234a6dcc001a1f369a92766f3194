@@ -1,0 +1,7 @@
+package service;
+
+public class tp {
+	
+accessAdminData dj=new accessAdminData();
+dj.writeDataToEmployee();
+}

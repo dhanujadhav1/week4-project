@@ -1,0 +1,42 @@
+package main;
+
+import java.util.Scanner;
+
+import controller.adminLogin;
+import model.employeeOperations;
+
+public class integrated {
+
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		adminLogin adminlogin = new adminLogin();
+		employeeOperations empoperations = new employeeOperations();
+
+		String password, id;
+		boolean validadmin = false;
+		int choice;
+
+		System.out.println("--------------------------------");
+		System.out.println("------------Welcome-------------");
+		System.out.println("Please login as admin:");
+		System.out.println("Enter admin ID");
+		id = sc.next();
+		System.out.println("Enter Password");
+		password = sc.next();
+		validadmin = adminlogin.validateAdmin(id, password);
+		if (validadmin) {
+			System.out.println("Enetr\n1:Add new employee \n2:Search employee by Name \n3:Search employee by id");
+			System.out.println("4:Search employee by Department \n5:View details of all employee \n6:Exit");
+			choice = sc.nextInt();
+			switch (choice) {
+			case 1:
+				empoperations.addEmployee();
+				break;
+			default:
+				System.out.println("Enter valid input");
+			}
+		} else
+			System.out.println("Enter Valid Credentials");
+	}
+}

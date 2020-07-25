@@ -1,0 +1,13 @@
+package ngmn;
+
+public class actual {
+static int rowCount=0; 
+	
+	public void writeDataToAdmin() {
+		
+		
+	}
+	
+	
+
+}

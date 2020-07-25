@@ -1,0 +1,25 @@
+package main;
+
+import java.util.Scanner;
+
+import controller.adminLogin;
+
+public class integrated {
+
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		adminLogin adminlogin = new adminLogin();
+		String password, id;
+		System.out.println("--------------------------------");
+		System.out.println("------------Welcome-------------");
+		System.out.println("Please login as admin:");
+		System.out.println("Enter admin ID");
+		id = sc.next();
+		System.out.println("Enter Password");
+		password = sc.next();
+		adminlogin.validateAdmin(id, password);
+		System.out.println("--------------------------------");
+
+	}
+}

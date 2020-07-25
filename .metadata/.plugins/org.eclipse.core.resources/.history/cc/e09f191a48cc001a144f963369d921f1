@@ -1,0 +1,16 @@
+package ngmn;
+
+import java.io.FileNotFoundException;
+
+public class dj1 {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		//dj abcd=new dj();
+		//abcd.abc();
+		putData ins = new putData();
+		
+
+	}
+
+}

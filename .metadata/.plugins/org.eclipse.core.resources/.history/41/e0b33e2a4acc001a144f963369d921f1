@@ -1,0 +1,68 @@
+package ngmn;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Iterator;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class actual {
+static int rowCount=0; 
+static int cellCount=0; 
+	static void increamentRowCount() {
+		rowCount+=1;
+	}
+	public void writeDataToAdmin(Admin admin) throws IOException {
+		 FileInputStream inputStream = new FileInputStream(new File("G:\\a\\week4\\final project\\admin.xlsx"));
+         Workbook workbook = new XSSFWorkbook(inputStream);
+         Sheet sheet=workbook.getSheetAt(0);
+         Row row = sheet.createRow(rowCount+=1);
+         Cell cell=row.createCell(0);
+         cell.setCellValue(admin.adminId);
+         cell=row.createCell(1);
+         cell.setCellValue(admin.adminName);
+         cell=row.createCell(2);
+         cell.setCellValue(admin.adminPassword);
+         inputStream.close();
+         FileOutputStream outputStream = new FileOutputStream("G:\\a\\week4\\final project\\admin.xlsx");
+         workbook.write(outputStream);
+         workbook.close();
+         outputStream.close();
+         
+	}
+	public void readDataFromAdmin() {
+		try {
+			
+			 FileInputStream inputStream = new FileInputStream(new File("G:\\a\\week4\\final project\\admin.xlsx"));
+	         Workbook workbook = new XSSFWorkbook(inputStream);
+	         Sheet sheet=workbook.getSheetAt(0);
+	         Iterator<Row> rowi = sheet.iterator();
+	         while(rowi.hasNext())
+	         {
+	        	 Iterator <Cell> celli=((Row) rowi).iterator();
+	        	 while(celli.hasNext()) {
+	        		 Cell cell = celli.next();
+	        		 System.out.print(cell+" ");
+	        	 }
+	        	 System.out.println();
+	        	 
+	        	 
+	         }
+	       
+	       
+	         workbook.close();
+	         inputStream.close();
+	        
+		}
+	}
+	
+	
+
+}

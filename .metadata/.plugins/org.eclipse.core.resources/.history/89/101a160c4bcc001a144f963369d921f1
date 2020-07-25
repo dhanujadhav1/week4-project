@@ -1,0 +1,23 @@
+package ngmn;
+
+import java.io.FileNotFoundException;
+
+public class dj1 {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		//dj abcd=new dj();
+		//abcd.abc();
+		//putData ins = new putData();
+		actual act= new actual();
+		Admin admin=new Admin("Dhananjay","1","Dhan");
+		try {
+		act.writeDataToAdmin(admin);
+		}
+catch(Exception e){
+	System.out.println(e);
+}
+		act.readDataFromAdmin();
+	}
+
+}
